@@ -1,3 +1,10 @@
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 42%);
+  --dark: hsl(0, 0%, 7%);
+}
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -6,56 +13,56 @@
 
 body {
   font-family: 'Figtree', sans-serif;
-  background-color: hsl(47, 88%, 63%);
+  background-color: var(--yellow);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 1rem;
-  font-size: clamp(14px, 1.2vw, 16px); 
+  font-size: clamp(0.875rem, 1.2vw, 1rem); 
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%); 
-  max-width: 384px;
-  padding: 24px;
-  border-radius: 20px;
-  border: 1px solid hsl(0, 0%, 7%);
-  box-shadow: 8px 8px 0px 0px hsl(0, 0%, 7%); 
+  background-color: var(--white); 
+  max-width: 24rem;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid var(--dark);
+  box-shadow: 0.5rem 0.5rem 0px 0px var(--dark); 
 }
 
 .card__image-container img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   display: block;
 }
 
 .card__content {
-  margin-top: 24px;
+  margin-block-start: 1.5rem;
 }
 
 .card__tag {
-  background-color: hsl(47, 88%, 63%);
-  padding: 4px 12px;
-  border-radius: 4px;
+  background-color: var(--yellow);
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
   font-weight: 800;
-  font-size: 12px; 
+  font-size: 0.75rem; 
   display: inline-block;
-  margin-bottom: 12px;
+  margin-block-end: 0.75rem;
 }
 
 .card__date {
-  font-size: 12px; 
-  color: hsl(0, 0%, 7%);
+  font-size: 0.75rem; 
+  color: var(--dark);
   display: block;
-  margin-bottom: 12px;
+  margin-block-end: 0.75rem;
 }
 
 .card__title {
-  font-size: clamp(20px, 2vw, 24px); 
+  font-size: clamp(1.25rem, 2vw, 1.5rem); 
   font-weight: 800;
-  margin-bottom: 12px;
-  color: hsl(0, 0%, 7%);
+  margin-block-end: 0.75rem;
+  color: var(--dark);
 }
 
 .card__title a {
@@ -64,36 +71,41 @@ body {
 }
 
 .card__title a:hover {
-  color: hsl(47, 88%, 63%);
+  color: var(--yellow);
 }
 
 .card__description {
-  color: hsl(0, 0%, 42%);
+  color: var(--grey);
   line-height: 1.5;
-  font-size: clamp(14px, 1.2vw, 16px);
-  margin-bottom: 24px;
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  margin-block-end: 1.5rem;
 }
-
 
 .card__author {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
   cursor: pointer;
 }
 
 .card__author:hover .card__author-name {
-  color: hsl(47, 88%, 63%); 
+  color: var(--yellow); 
   text-decoration: underline;
 }
 
 .card__author img {
-  width: 32px;
+  width: 2rem;
   border-radius: 50%;
 }
 
 .card__author-name {
   font-weight: 800;
-  font-size: 12px; 
+  font-size: 0.75rem; 
   transition: color 0.2s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }
