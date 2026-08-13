@@ -88,11 +88,6 @@ body {
   cursor: pointer;
 }
 
-.card__author:hover .card__author-name {
-  color: var(--yellow); 
-  text-decoration: underline;
-}
-
 .card__author img {
   width: 2rem;
   border-radius: 50%;
@@ -104,8 +99,13 @@ body {
   transition: color 0.2s ease-in-out;
 }
 
+.card__author:hover .card__author-name {
+  color: var(--yellow); 
+  text-decoration: underline;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
+  .card__author-name {
+    transition: none;
   }
 }
