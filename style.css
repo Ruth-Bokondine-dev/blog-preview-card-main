@@ -18,7 +18,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 1rem;
+  padding: clamp(1rem, 3vw, 2rem);
   font-size: clamp(0.875rem, 1.2vw, 1rem); 
 }
 
